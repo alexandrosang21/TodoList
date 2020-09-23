@@ -3,7 +3,7 @@ $('ul').on('click', 'li', function() {
 });
 
 $('ul').on('click', 'span', function(event) {
-	$(this).parent().fadeOut(500, function() {
+	$(this).parent().fadeOut(800, function() {
 		$(this).remove();
 	});
 	event.stopPropagation();
@@ -14,22 +14,12 @@ $("input[type='text']").keypress(function(event) {
 		//grabbing new todo text from input
 		let todotext = $(this).val();
 		//create a new li to and ad to ul with append()
-		$('ul').append('<li><span>X</span> ' + todotext + '</li>');
+		$('ul').append('<li><span><i class="fas fa-trash"></i> </span> ' + todotext + '</li>');
+		event.currentTarget.value = '';
 	}
 });
 
-//OLD CODE
-// //if li is gray
-// if ($(this).css('color') === 'rgb(128, 128, 128)') {
-// 	//make it black
-// 	$(this).css({
-// 		color: 'black',
-// 		textDecoration: 'none'
-// 	});
-// } else {
-// 	//else make it gray
-// 	$(this).css({
-// 		color: 'gray',
-// 		textDecoration: 'line-through'
-// 	});
-// }
+$('h1').on('click', 'i', function() {
+	$('input').fadeToggle();
+	$('input').focus();
+});
