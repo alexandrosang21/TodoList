@@ -1,5 +1,6 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     background: linear-gradient(152deg, #ffcd00, #2500a0);
     background-size: 400% 400%;

@@ -9,12 +9,19 @@ $('ul').on('click', 'span', function(event) {
 	event.stopPropagation();
 });
 
-$("input[type='text']").keypress(function(event) {
+$("input[type='text']").on('keypress', function(event) {
 	if (event.which === 13) {
 		//grabbing new todo text from input
 		let todotext = $(this).val();
-		//create a new li to and ad to ul with append()
-		$('ul').append('<li><span><i class="fas fa-trash"></i> </span> ' + todotext + '</li>');
+		//check if input is blank
+		if (!todotext == '') {
+			if (todotext === 'skoupidi') {
+				alert('ESU EISAI SKOUPIDI');
+				location.replace('https://www.google.com/search?q=trash&tbm=isch');
+			}
+			//create a new li to and ad to ul with append()
+			$('ul').append('<li><span><i class="fas fa-trash"></i> </span> ' + todotext + '</li>');
+		}
 		event.currentTarget.value = '';
 	}
 });
